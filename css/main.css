@@ -1,0 +1,104 @@
+@font-face {
+  font-family: "Fuzzy Bubbles";
+  font-weight: 200;
+  font-display: swap;
+  src: url("../FuzzyBubbles-Bold.ttf");
+}
+@keyframes appear {
+  from {
+    bottom: -60px;
+  }
+  to {
+    bottom: 0;
+  }
+}
+@keyframes wack {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-30deg);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fuzzy Bubbles";
+  color: #702f03;
+  cursor: none;
+}
+
+.container {
+  position: absolute;
+  top: 7rem;
+}
+
+body {
+  background-image: url("../images/grass.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+body .heading {
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .score {
+  font-size: 1.3em;
+  margin: 1em 0;
+  text-align: center;
+}
+body .allHoles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+  justify-items: center;
+}
+body .hole {
+  position: relative;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: #000;
+  overflow: hidden;
+  z-index: 7;
+}
+body .mole {
+  position: absolute;
+  z-index: 1;
+  height: 60px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: appear 0.3s linear;
+  pointer-events: none;
+}
+body .buttons {
+  margin-top: 3em;
+  text-align: center;
+}
+body .buttons button {
+  padding: 15px 45px;
+  background-color: inherit;
+  border: 3px solid #702f03;
+  color: #702f03;
+  border-radius: 3px;
+  outline: none;
+  font-size: 1.5rem;
+}
+body button.stop {
+  display: none;
+}
+body .cursor {
+  position: absolute;
+  height: 125px;
+  z-index: 10;
+  transform: translate(-10px, -40px);
+  pointer-events: none;
+}/*# sourceMappingURL=main.css.map */
